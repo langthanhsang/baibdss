@@ -50,7 +50,11 @@ public class Main {
                     managerHuman.displayByName();
 
                 case 8:
-                    System.out.println("0.exit");
+                    System.out.println("8.tìm theo ten");
+                    managerHuman.searchByName();
+
+                case 0:
+                    System.out.println("0. exit");
 
             }
 

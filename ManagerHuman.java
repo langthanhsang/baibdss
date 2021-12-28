@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManagerHuman {
-    ArrayList<Human>humans = new ArrayList<>();
+    ArrayList<Human> humans = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
     public void addHuman() {
@@ -19,19 +19,19 @@ public class ManagerHuman {
         String gender = scanner.nextLine();
         System.out.println("nhập địa chỉ: ");
         String address = scanner.nextLine();
-        Human human = new Human(name,age,gender,address);
+        Human human = new Human(name, age, gender, address);
         humans.add(human);
     }
 
     public void displayllHuman() {
-        for (Human human: humans) {
+        for (Human human : humans) {
             System.out.println(human);
         }
     }
 
     public void displaylessThan20() {
         for (int i = 0; i < humans.size(); i++) {
-            if(humans.get(i).getAge() < 20) {
+            if (humans.get(i).getAge() < 20) {
                 System.out.println(humans.get(i));
             }
         }
@@ -39,8 +39,8 @@ public class ManagerHuman {
 
     public void displayMale() {
 
-        for (Human human: humans) {
-            if(human.getGender().equalsIgnoreCase("male")){
+        for (Human human : humans) {
+            if (human.getGender().equalsIgnoreCase("male")) {
                 System.out.println(human);
             }
         }
@@ -48,12 +48,13 @@ public class ManagerHuman {
 
     public void displayfeelMale() {
 
-        for (Human human: humans) {
-            if(human.getGender().equalsIgnoreCase("fellmale")){
+        for (Human human : humans) {
+            if (human.getGender().equalsIgnoreCase("fellmale")) {
                 System.out.println(human);
             }
         }
     }
+
     public void deleteByName() {
         String name = scanner.nextLine();
         humans.removeIf(human -> human.getName().equals(name));
@@ -61,8 +62,8 @@ public class ManagerHuman {
 
     public void displayByName() {
         String name = scanner.nextLine();
-        for (Human human:humans) {
-            if (human.getName().equals(name)){
+        for (Human human : humans) {
+            if (human.getName().equals(name)) {
                 System.out.println(human);
             }
 
@@ -86,5 +87,14 @@ public class ManagerHuman {
         }
 
     }
+
+    public void searchByName() {
+        String name = scanner.nextLine();
+        for (Human human : humans) {
+            if (human.getName().equals(name)){
+                System.out.println(human);
+            }
+        }
     }
+}
 
